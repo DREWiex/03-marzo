@@ -6,11 +6,8 @@ class Ficha {
         this.anotar = function(...km){
             
             this.km.push(...km);
-
             this.sesiones = this.km.length;
 
-            console.log(this.km);
-            console.log(this.sesiones);
         };
         this.media = function(km, sesiones){
             
@@ -22,6 +19,7 @@ class Ficha {
         };
     };
 
+    /*
     anotar(...km){
 
         this.km.push(...km);
@@ -31,7 +29,7 @@ class Ficha {
         console.log(this.km);
         console.log(this.sesiones);
 
-        /*
+        
         do{
             this.sesiones = parseInt(prompt("¿Cuántas sesiones de ejercicios realizaste?"));
             if(isNaN(this.sesiones)){
@@ -43,9 +41,9 @@ class Ficha {
             let pregunta = prompt(`¿Cuántos kilómetros recorriste en la sesión ${i}?`);
             this.km.push(pregunta);
         }
-        */
+        
     };
-
+    
     media(){
 
         let total = 0;
@@ -55,7 +53,7 @@ class Ficha {
         return calcularMedia;
         
     };
-
+    */
 };
 
 const fichaJorge = new Ficha('Jorge');
