@@ -1,0 +1,28 @@
+07/03/2023
+
+Tengo que iniciar el npm (o node?) al empezar un proyecto: npm init(?)
+
+Para exportar: module (clase) exports (propiedad)
+module.exports = { variable1, variable2};
+
+Puedo exportar arrays, objetos, eventos…
+
+Solo puede haber una exportación por documento.
+
+* Es preferible exportar objetos, porque es más fácil destructurar que en un array ->
+
+* Cuando estoy destructurando una función no coloco los paréntesis, solo el nombre de la función, y luego la invoco donde la necesite.
+
+* Para instalar en global en Mac, siempre va primero la palabra reservada "sudo". Ejemplo: sudo npm installar -g nodemon.
+
+Instalar dependencias: npm install colors (por ejemplo)
+
+Si ya está el package.json con la dependencia, con indicar "npm i" ya reconoce las dependencias que tiene que instalar y crea el node modules.
+
+* El package .json no se toca nunca.
+
+Para no hacer seguimiento a una carpeta o archivo en concreto cuando hagamos push a Github, lo metemos en el archivo ".gitignore"
+
+VARIABLES DE ENTORNO (archivo .env): variables que se asignan en el servidor. Por ejemplo: API key, las cuales no nos interesa compartirlas, por eso las ignoraremos en el .gitignore. De momento, las trabajaremos en local, pero se deberían configurar en el servidor (el backend).
+
+El objeto http ya está instalado en node.

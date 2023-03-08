@@ -1,0 +1,68 @@
+07/03/2023
+
+Introducción a EXPRESS
+
+¿Qué es un framework? Es una "librería" o marco de trabajo. Subprograma del cual podremos utilizar con sus funciones, clases, métodos, propiedades…
+
+Inicializar mi proyecto:
+1) npm init -y (o --yes) --> crea el package.json completado
+1.2) Configuramos los scripts: "start": "node app.js", "dev": "nodemon app.js"
+1.2.1) npm run start --> activa node
+1.2.2) npm run dev --> arranca el servidor(?)
+2) npm i express --> (dependencia de producción)
+2.1) npm run express --> activa el servidor express (para ver los resultados de lo que estoy haciendo en mi archivo app.js)
+* dependencia de producción: se utilizará en el proyecto final
+* dependencia de desarrollo (dev): se utilizará solo durante el desarrollo
+2.1) Requerimos en mi archivo js principal a express: const express = require ('express);
+2.2) "Instanciamos" (realmente no es una instancia, pero funciona como tal) a express: const app = express();
+
+n) Crear .env, para las variables de entorno.
+n) Crear .gitignore, para dejar de hacer seguimiento a las carpetas/archivos que indiquemos dentro.
+n.n) Incluimos: node_modules y .env
+
+
+Create = POST
+Read = GET
+… = PUT
+Borrar = DELETE
+
+-X-
+
+En la carpeta pública estará todo lo que se "pintará" en el navegador (en el DOM), es decir, rutas estáticas (index.html, por ej.).
+
+app.use(express.static('public'))
+
+.use: son funciones "middleware" que se ejecutan antes de hacer la solicitud al servidor.
+
+Utilizamos el método "static()" de express, en el cual indicaremos la url
+
+Template engines (ingeniería de plantillas): nos permite crearnos plantillas para que cuando el usuario haga una petición a la url, el servidor renderiza y, de forma virtual, lo lleva la carpeta pública
+
+Nos podremos crear archivos para el header, otro para el footer, otro para el nav… (todos son ejemplos, pero puede variar).
+
+n) Tendremos que instalar el paquete del template engines que vayamos a utilizar:
+n) En app.js:
+
+    app.get('/', (req, res) => {
+        res.render()
+    });
+
+1) Qué archivo quiero que me renderice: ('index')
+
+
+--> ctrl + c (matar al servidor) <--
+
+En views tengo los "pedazos" que voy a renderizar para mostrarlos en la carpeta public.
+Solo puedo establecer una vez la ingeniería de plantillas: app.set("views", __dirname + "/views");
+Luego, al renderizar, no hace falta que indique la ruta completa, solo me valdría con el archivo:
+app.get('/', (req, res) => {
+    res.render('index');
+});
+
+Me creo, dentro de views, una subcarpeta "templates" para las piezas que se van a reutilizar en varios archivos.
+
+
+<%= (unescape) : no interpreta (copia/pega, no tiene que interpretar nada).
+<%- (HTML escaped) = sí tiene que interpretar .
+
+El script "start" es obligatorio, ya que es el que se activa automáticamente con la llamada del servidor.
